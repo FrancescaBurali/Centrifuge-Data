@@ -1,0 +1,14 @@
+%transform all -ASCII files in the folder in .mat file
+% a is the directoy in wich the files are stored
+
+A= dir(fullfile(a,'*.ASC'));
+fileNames = {A.name};
+
+cd(directory_name)
+
+for i=1:numel(fileNames)
+  newName(i) = strrep(fileNames(i), '.ASC', '.m'); 
+  [status,message,messageis]=  movefile( fullfile(a, char(fileNames{i})), char(newName{i}))
+end
+
+
